@@ -350,49 +350,13 @@ function footer(base) {
 }
 
 /* ------------------------------------------------------------- coverage map */
-/* stylised dark map of the Angus/Aberdeenshire coast, service strip in yellow */
-function coverageMap() {
+/* static dark map image of the Angus/Aberdeenshire coast, service area in yellow */
+function coverageMap(base = '') {
   return `
 <div class="map-card reveal">
-  <svg viewBox="0 0 420 460" role="img" aria-label="Map of the east coast of Scotland showing 360 Contracts' service area from Dundee and Arbroath up to Aberdeen">
-    <defs>
-      <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#0e0e0e"/><stop offset="1" stop-color="#080808"/>
-      </linearGradient>
-      <linearGradient id="strip" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#ffd400" stop-opacity=".28"/>
-        <stop offset="1" stop-color="#ffd400" stop-opacity=".10"/>
-      </linearGradient>
-    </defs>
-    <rect width="420" height="460" fill="url(#sea)"/>
-    <!-- landmass -->
-    <path d="M0,40 L150,44 C200,60 210,96 250,120 C300,150 330,150 360,200
-             C392,250 380,300 352,338 C320,382 300,420 260,460 L0,460 Z"
-          fill="#181818" stroke="rgba(255,255,255,.08)" stroke-width="1.2"/>
-    <!-- highlighted coastal service strip -->
-    <path d="M150,44 C200,60 210,96 250,120 C300,150 330,150 360,200
-             C392,250 380,300 352,338 C320,382 300,420 260,460
-             L200,460 C238,410 268,372 300,332 C330,292 338,250 312,214
-             C286,178 258,168 214,138 C182,116 170,86 132,64 Z"
-          fill="url(#strip)" stroke="#ffd400" stroke-width="1.6" stroke-opacity=".8"/>
-    <!-- towns (north -> south) -->
-    ${mapPin(300, 250, 'Aberdeen', 'end')}
-    ${mapPin(330, 315, 'Stonehaven', 'end')}
-    ${mapPin(268, 372, 'Montrose', 'end')}
-    ${mapPin(210, 402, 'Arbroath', 'end')}
-    ${mapPin(170, 428, 'Carnoustie', 'end')}
-    ${mapPin(120, 450, 'Dundee', 'end')}
-  </svg>
-  <div class="map-legend"><i></i> 360 Contracts service area</div>
+  <img src="${base}images/coverage-map.jpg" width="1672" height="941" loading="lazy" decoding="async"
+       alt="Map of the east coast of Scotland showing 360 Contracts' service area from Dundee and Arbroath up to Aberdeen" />
 </div>`;
-}
-function mapPin(x, y, label, anchor) {
-  const tx = anchor === 'end' ? x - 12 : x + 12;
-  return `<g>
-      <circle cx="${x}" cy="${y}" r="9" fill="#ffd400" opacity=".18"/>
-      <circle cx="${x}" cy="${y}" r="4" fill="#ffd400"/>
-      <text x="${tx}" y="${y + 4}" text-anchor="${anchor}" fill="#fff" font-family="DM Sans, sans-serif" font-size="13" font-weight="700">${label}</text>
-    </g>`;
 }
 
 /* ----------------------------------------------------------- shared blocks */
@@ -557,7 +521,7 @@ ${reviewsCarousel(REVIEWS.slice(0, 8))}
           ${AREAS.map(a => `<a class="area" href="areas.html">${a}</a>`).join('\n          ')}
         </div>
       </div>
-      ${coverageMap()}
+      ${coverageMap(base)}
     </div>
   </div>
 </section>
@@ -772,7 +736,7 @@ function pageAreas() {
           ${AREAS.map(a => `<span class="area">${a}</span>`).join('\n          ')}
         </div>
       </div>
-      ${coverageMap()}
+      ${coverageMap(base)}
     </div>
   </div>
 </section>
