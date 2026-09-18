@@ -37,7 +37,8 @@ const IC = {
   drainage: '<path d="M4 4v6a8 8 0 0 0 8 8 8 8 0 0 0 8-8V4M12 18v3M9 21h6"/>',
   tarmac: '<path d="M3 17h18M3 17l3-9h12l3 9M9 8v9M15 8v9"/>',
   fencing: '<path d="M3 21V8l3-2 3 2v13M15 21V8l3-2 3 2v13M3 12h6M15 12h6M9 21h6"/>',
-  extensions: '<path d="M4 20h16M6 20V10l6-5 6 5v10M9 20v-5h6v5"/>'
+  extensions: '<path d="M4 20h16M6 20V10l6-5 6 5v10M9 20v-5h6v5"/>',
+  bricklaying: '<rect x="3" y="4" width="18" height="16"/><path d="M3 9.3h18M3 14.6h18M8 4v5.3M13.5 4v5.3M18.5 4v5.3M5.5 9.3v5.3M11 9.3v5.3M16 9.3v5.3M8 14.6V20M13.5 14.6V20M18.5 14.6V20"/>'
 };
 const svc_ic = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">${IC[k]}</svg>`;
 
@@ -51,95 +52,7 @@ const stars5 = `<div class="stars" aria-label="5 out of 5 stars">${star.repeat(5
 /* ----------------------------------------------------------------- services */
 const SERVICES = [
   {
-    slug: 'building', title: 'Building Services', num: '01', icon: 'building',
-    img: 'commercial-paving.jpg',
-    short: 'General building work from foundations to final finish, planned and managed by one team.',
-    meta: 'General building contractor in Arbroath, Angus & Tayside. 360 Contracts handles building work from foundations to finish — one team, one point of contact.',
-    lead: 'Whatever the job needs, we build it. 360 Contracts covers general building work across Arbroath, Dundee, Angus and up to Aberdeen, with every trade supplied and project-managed under one roof.',
-    body: [
-      { h: 'Building work, handled properly', p: 'From foundations to the final finish, we plan, price and manage the whole job so you deal with one team instead of chasing three or four separate contractors. Clear timelines, tidy sites and a standard we stand behind.' },
-      { h: "What's involved", list: ['Foundations, groundwork and structural work', 'Blockwork, brickwork and rendering', 'Alterations, knock-throughs and repairs', 'Full project management and one point of contact', 'Finished on time, on budget and signed off'] }
-    ]
-  },
-  {
-    slug: 'monoblocking', title: 'Monoblocking', num: '02', icon: 'monoblocking',
-    img: 'driveway-block.jpg',
-    short: 'Block-paved driveways and paths laid dead level, edged and finished to last for decades.',
-    meta: 'Monoblock driveways in Arbroath, Dundee & Angus. Block paving laid dead level on a proper sub-base, edged and finished to last. Free quotes from 360 Contracts.',
-    lead: 'Block-paved driveways and paths laid dead level on a proper sub-base, edged sharp and finished to last for decades. Serving Arbroath, Dundee, Angus and Aberdeen.',
-    body: [
-      { h: 'Driveways done right from the ground up', p: 'A monoblock drive is only as good as what goes underneath it. We excavate to the right depth, lay and compact a proper sub-base, then set the blocks level with clean lines and solid edge restraints so nothing shifts or sinks.' },
-      { h: "What's involved", list: ['Excavation and full sub-base preparation', 'Block paving in your choice of colour and pattern', 'Solid edge courses and kerbing', 'Drainage and levels sorted so water runs away', 'Kiln-dried sand, compacted and finished'] }
-    ]
-  },
-  {
-    slug: 'slabbing', title: 'Slabbing & Patios', num: '03', icon: 'slabbing',
-    img: 'porcelain-patio.jpg',
-    short: 'Porcelain and natural stone patios that turn a back garden into a proper outdoor room.',
-    meta: 'Patios & slabbing in Angus and Tayside. Porcelain and natural stone patios laid level with clean joints by 360 Contracts. Free quotes across Arbroath to Aberdeen.',
-    lead: 'Porcelain and natural stone patios that turn a back garden into a proper outdoor room. Laid level, jointed clean and built to last.',
-    body: [
-      { h: 'Patios that lift the whole garden', p: 'Porcelain, Indian sandstone or natural stone — laid on a full mortar bed with the right falls so water drains away, pointed neatly and finished to a standard you will actually want to show off.' },
-      { h: "What's involved", list: ['Porcelain, sandstone and natural stone patios', 'Full mortar bed with correct falls and drainage', 'Neat pointing and clean, consistent joints', 'Steps, edging and feature borders', 'Sealed and finished ready to use'] }
-    ]
-  },
-  {
-    slug: 'landscaping', title: 'Landscaping', num: '04', icon: 'landscaping',
-    img: 'landscaping-after.jpg',
-    short: 'Full garden transformations: levels, lawns, artificial grass, planting and features.',
-    meta: 'Garden landscaping in Arbroath, Angus & Tayside. Full garden transformations — levels, lawns, artificial grass, patios and features by 360 Contracts.',
-    lead: 'Full garden transformations from one team — levels, lawns, artificial grass, planting and features, all handled start to finish.',
-    body: [
-      { h: 'Your whole garden, one team', p: 'We take gardens from tired and uneven to finished outdoor spaces — reworking levels, building patios and paths, laying real or artificial lawn and pulling it all together so it works as one space.' },
-      { h: "What's involved", list: ['Garden design, levelling and groundwork', 'Artificial grass and real turf', 'Patios, paths and retaining walls', 'Planting beds, borders and features', 'Fencing, screening and lighting'] }
-    ]
-  },
-  {
-    slug: 'new-builds', title: 'New Builds', num: '05', icon: 'new-builds',
-    img: 'commercial-paving.jpg',
-    short: 'Ground-up builds handled from the first dig to the keys, on time and built to spec.',
-    meta: 'New build construction in Angus & Tayside. Ground-up builds handled from first dig to handover by 360 Contracts. One team, every trade, built to spec.',
-    lead: 'Ground-up builds handled from the first dig to the keys — on time, built to spec and managed by one team the whole way.',
-    body: [
-      { h: 'From bare plot to handover', p: 'We take new builds through every stage — groundwork, foundations, structure, trades and finish — coordinating each trade so the job runs to programme without you having to chase anyone.' },
-      { h: "What's involved", list: ['Site clearance, groundwork and foundations', 'Structural build and blockwork', 'Every trade supplied and coordinated', 'Full project management to programme', 'Finished, snagged and handed over'] }
-    ]
-  },
-  {
-    slug: 'digger-work', title: 'Digger Work', num: '06', icon: 'digger-work',
-    img: 'driveway-mono.jpg',
-    short: 'Excavation, site clearance and groundwork with our own plant and experienced operators.',
-    meta: 'Digger hire with operator & groundwork in Angus and Tayside. Excavation, site clearance and muck-away by 360 Contracts. Free quotes Arbroath to Aberdeen.',
-    lead: 'Excavation, site clearance and groundwork with our own plant and experienced operators. No waiting on a third party.',
-    body: [
-      { h: 'Groundwork with our own machines', p: 'Because we run our own diggers and operators, the groundwork stage never holds a job up. Digging out, grading, trenching or clearing a site — it gets done quickly, accurately and tidied up after.' },
-      { h: "What's involved", list: ['Excavation and dig-outs to level', 'Site clearance and muck-away', 'Trenching for drainage and services', 'Grading, levelling and reduced dig', 'Experienced, ticketed operators'] }
-    ]
-  },
-  {
-    slug: 'stonework', title: 'Stonework', num: '07', icon: 'stonework',
-    img: 'path-steps.jpg',
-    short: 'Walls, steps and feature stonework built by hand. The detail that lifts a whole project.',
-    meta: 'Stonework & stone walls in Angus and Tayside. Garden walls, steps and feature stonework built by hand by 360 Contracts. Free quotes across the east coast.',
-    lead: 'Walls, steps and feature stonework built by hand — the detail that lifts a whole project from good to finished.',
-    body: [
-      { h: 'Handbuilt stone that lasts', p: 'Retaining walls, garden walls, steps and feature stonework built properly with the right foundations and materials. Natural stone or facing brick, finished with a neat, consistent point.' },
-      { h: "What's involved", list: ['Retaining and garden walls', 'Natural stone and facing brick', 'Steps, pillars and copings', 'Feature walls and cladding', 'Repointing and repairs'] }
-    ]
-  },
-  {
-    slug: 'drainage', title: 'Drainage', num: '08', icon: 'drainage',
-    img: 'driveway-mono.jpg',
-    short: 'Soakaways, channel drains and full drainage put in properly so water goes where it should.',
-    meta: 'Drainage solutions in Angus and Tayside. Soakaways, channel drains and surface water drainage installed properly by 360 Contracts. Free quotes Arbroath to Aberdeen.',
-    lead: 'Soakaways, channel drains and full drainage put in properly so water goes where it should — not where it shouldn\'t.',
-    body: [
-      { h: 'Water sorted, first time', p: 'Standing water and poor drainage wreck driveways, patios and gardens. We design and install the right solution — soakaways, channels, gullies and land drains — so surface water is dealt with for good.' },
-      { h: "What's involved", list: ['Soakaways and land drainage', 'Channel and linear drains', 'Gullies, gratings and connections', 'Correct falls designed into every job', 'Driveway and patio surface drainage'] }
-    ]
-  },
-  {
-    slug: 'tarmac', title: 'Tarmac', num: '09', icon: 'tarmac',
+    slug: 'tarmac', title: 'Tarmac', num: '01', icon: 'tarmac',
     img: 'driveway-mono.jpg',
     short: 'Smooth, hard-wearing tarmac driveways and surfaces laid clean, level and edged sharp.',
     meta: 'Tarmac driveways & surfacing in Angus and Tayside. Smooth, hard-wearing tarmac laid level and edged sharp by 360 Contracts. Free quotes Arbroath to Aberdeen.',
@@ -150,7 +63,51 @@ const SERVICES = [
     ]
   },
   {
-    slug: 'fencing', title: 'Fencing', num: '10', icon: 'fencing',
+    slug: 'paving', title: 'Paving', num: '02', icon: 'monoblocking',
+    img: 'driveway-block.jpg',
+    short: 'Block-paved driveways, paths and patios laid dead level, edged and finished to last for decades.',
+    meta: 'Paving & block-paved driveways in Arbroath, Dundee & Angus. Laid dead level on a proper sub-base, edged and finished to last. Free quotes from 360 Contracts.',
+    lead: 'Block-paved driveways, paths and paved areas laid dead level on a proper sub-base, edged sharp and finished to last for decades. Serving Arbroath, Dundee, Angus and Aberdeen.',
+    body: [
+      { h: 'Paving done right from the ground up', p: 'A paved drive is only as good as what goes underneath it. We excavate to the right depth, lay and compact a proper sub-base, then set the blocks level with clean lines and solid edge restraints so nothing shifts or sinks.' },
+      { h: "What's involved", list: ['Block-paved driveways, paths and patios', 'Excavation and full sub-base preparation', 'Solid edge courses and kerbing', 'Drainage and levels sorted so water runs away', 'Kiln-dried sand, compacted and finished'] }
+    ]
+  },
+  {
+    slug: 'building', title: 'Building Services', num: '03', icon: 'building',
+    img: 'commercial-paving.jpg',
+    short: 'General building work from foundations to final finish, planned and managed by one team.',
+    meta: 'General building contractor in Arbroath, Angus & Tayside. 360 Contracts handles building work from foundations to finish — one team, one point of contact.',
+    lead: 'Whatever the job needs, we build it. 360 Contracts covers general building work across Arbroath, Dundee, Angus and up to Aberdeen, with every trade supplied and project-managed under one roof.',
+    body: [
+      { h: 'Building work, handled properly', p: 'From foundations to the final finish, we plan, price and manage the whole job so you deal with one team instead of chasing three or four separate contractors. Clear timelines, tidy sites and a standard we stand behind.' },
+      { h: "What's involved", list: ['Foundations, groundwork and structural work', 'Blockwork, brickwork and rendering', 'Alterations, knock-throughs and repairs', 'Full project management and one point of contact', 'Finished on time, on budget and signed off'] }
+    ]
+  },
+  {
+    slug: 'slabbing', title: 'Slabbing & Patios', num: '04', icon: 'slabbing',
+    img: 'porcelain-patio.jpg',
+    short: 'Porcelain and natural stone patios that turn a back garden into a proper outdoor room.',
+    meta: 'Patios & slabbing in Angus and Tayside. Porcelain and natural stone patios laid level with clean joints by 360 Contracts. Free quotes across Arbroath to Aberdeen.',
+    lead: 'Porcelain and natural stone patios that turn a back garden into a proper outdoor room. Laid level, jointed clean and built to last.',
+    body: [
+      { h: 'Patios that lift the whole garden', p: 'Porcelain, Indian sandstone or natural stone — laid on a full mortar bed with the right falls so water drains away, pointed neatly and finished to a standard you will actually want to show off.' },
+      { h: "What's involved", list: ['Porcelain, sandstone and natural stone patios', 'Full mortar bed with correct falls and drainage', 'Neat pointing and clean, consistent joints', 'Steps, edging and feature borders', 'Sealed and finished ready to use'] }
+    ]
+  },
+  {
+    slug: 'landscaping', title: 'Landscaping', num: '05', icon: 'landscaping',
+    img: 'landscaping-after.jpg',
+    short: 'Full garden transformations: levels, lawns, artificial grass, planting and features.',
+    meta: 'Garden landscaping in Arbroath, Angus & Tayside. Full garden transformations — levels, lawns, artificial grass, patios and features by 360 Contracts.',
+    lead: 'Full garden transformations from one team — levels, lawns, artificial grass, planting and features, all handled start to finish.',
+    body: [
+      { h: 'Your whole garden, one team', p: 'We take gardens from tired and uneven to finished outdoor spaces — reworking levels, building patios and paths, laying real or artificial lawn and pulling it all together so it works as one space.' },
+      { h: "What's involved", list: ['Garden design, levelling and groundwork', 'Artificial grass and real turf', 'Patios, paths and retaining walls', 'Planting beds, borders and features', 'Fencing, screening and lighting'] }
+    ]
+  },
+  {
+    slug: 'fencing', title: 'Fencing', num: '06', icon: 'fencing',
     img: 'garden-full.jpg',
     short: 'Timber, composite and screening fitted straight, solid and built to take a Scottish winter.',
     meta: 'Fencing in Arbroath, Angus & Tayside. Timber, composite and screening fitted straight and solid by 360 Contracts. Free quotes across the east coast.',
@@ -158,6 +115,50 @@ const SERVICES = [
     body: [
       { h: 'Fencing built to stand', p: 'Posts set properly, panels level and everything squared up. Whether it is close-board, panels, composite or decorative screening, it goes in straight and stays that way.' },
       { h: "What's involved", list: ['Close-board, panel and slatted fencing', 'Composite and low-maintenance systems', 'Decorative screening and gates', 'Posts concreted in solid', 'Old fencing removed and disposed of'] }
+    ]
+  },
+  {
+    slug: 'bricklaying', title: 'Bricklaying', num: '07', icon: 'bricklaying',
+    img: 'path-steps.jpg',
+    short: 'Brick and blockwork laid true and level — walls, piers and features built by hand to last.',
+    meta: 'Bricklaying in Arbroath, Angus & Tayside. Brick and blockwork, garden walls, piers and feature brickwork laid true and level by 360 Contracts. Free quotes across the east coast.',
+    lead: 'Brick and blockwork laid true and level — walls, piers and features built by hand to a clean, consistent finish that lasts.',
+    body: [
+      { h: 'Brickwork done by hand', p: 'Straight courses, plumb piers and a neat, consistent point. From garden and boundary walls to piers, steps and feature brickwork, we build on proper foundations with the right materials so it stands square for the long haul.' },
+      { h: "What's involved", list: ['Garden, boundary and retaining walls', 'Brick and block piers and pillars', 'Facing brick and feature brickwork', 'Steps, copings and detailing', 'Repointing, repairs and making good'] }
+    ]
+  },
+  {
+    slug: 'stonework', title: 'Stonework', num: '08', icon: 'stonework',
+    img: 'path-steps.jpg',
+    short: 'Walls, steps and feature stonework built by hand. The detail that lifts a whole project.',
+    meta: 'Stonework & stone walls in Angus and Tayside. Garden walls, steps and feature stonework built by hand by 360 Contracts. Free quotes across the east coast.',
+    lead: 'Walls, steps and feature stonework built by hand — the detail that lifts a whole project from good to finished.',
+    body: [
+      { h: 'Handbuilt stone that lasts', p: 'Retaining walls, garden walls, steps and feature stonework built properly with the right foundations and materials. Natural stone or facing brick, finished with a neat, consistent point.' },
+      { h: "What's involved", list: ['Retaining and garden walls', 'Natural stone and facing brick', 'Steps, pillars and copings', 'Feature walls and cladding', 'Repointing and repairs'] }
+    ]
+  },
+  {
+    slug: 'digger-work', title: 'Digger Work', num: '09', icon: 'digger-work',
+    img: 'driveway-mono.jpg',
+    short: 'Excavation, site clearance and groundwork with our own plant and experienced operators.',
+    meta: 'Digger hire with operator & groundwork in Angus and Tayside. Excavation, site clearance and muck-away by 360 Contracts. Free quotes Arbroath to Aberdeen.',
+    lead: 'Excavation, site clearance and groundwork with our own plant and experienced operators. No waiting on a third party.',
+    body: [
+      { h: 'Groundwork with our own machines', p: 'Because we run our own diggers and operators, the groundwork stage never holds a job up. Digging out, grading, trenching or clearing a site — it gets done quickly, accurately and tidied up after.' },
+      { h: "What's involved", list: ['Excavation and dig-outs to level', 'Site clearance and muck-away', 'Trenching for drainage and services', 'Grading, levelling and reduced dig', 'Experienced, ticketed operators'] }
+    ]
+  },
+  {
+    slug: 'drainage', title: 'Drainage', num: '10', icon: 'drainage',
+    img: 'driveway-mono.jpg',
+    short: 'Soakaways, channel drains and full drainage put in properly so water goes where it should.',
+    meta: 'Drainage solutions in Angus and Tayside. Soakaways, channel drains and surface water drainage installed properly by 360 Contracts. Free quotes Arbroath to Aberdeen.',
+    lead: 'Soakaways, channel drains and full drainage put in properly so water goes where it should — not where it shouldn\'t.',
+    body: [
+      { h: 'Water sorted, first time', p: 'Standing water and poor drainage wreck driveways, patios and gardens. We design and install the right solution — soakaways, channels, gullies and land drains — so surface water is dealt with for good.' },
+      { h: "What's involved", list: ['Soakaways and land drainage', 'Channel and linear drains', 'Gullies, gratings and connections', 'Correct falls designed into every job', 'Driveway and patio surface drainage'] }
     ]
   },
   {
@@ -195,7 +196,7 @@ const AREAS = ['Dundee', 'Arbroath', 'Carnoustie', 'Montrose', 'Brechin', 'Forfa
 /* ------------------------------------------------------------------ gallery */
 const GALLERY = [
   { c: 'g1', img: 'garden-full.jpg', s: 'Landscaping', t: 'Split-Level Garden', alt: 'Split-level garden with porcelain patio, steps and artificial lawn' },
-  { c: 'g2', img: 'driveway-block.jpg', s: 'Monoblocking', t: 'Block Driveway', alt: 'Grey block-paved driveway with chip border to a bungalow' },
+  { c: 'g2', img: 'driveway-block.jpg', s: 'Paving', t: 'Block Driveway', alt: 'Grey block-paved driveway with chip border to a bungalow' },
   { c: 'g3', img: 'porcelain-patio.jpg', s: 'Slabbing', t: 'Sandstone Patio', alt: 'Indian sandstone patio with sleeper edging and artificial lawn' },
   { c: 'g4', img: 'hero-garden.jpg', s: 'Landscaping', t: 'Slate & Lawn', alt: 'Large slate patio with circular artificial lawn and pergola' },
   { c: 'g5', img: 'driveway-mono.jpg', s: 'Driveways', t: 'Charcoal Block', alt: 'Charcoal monoblock driveway with brick pillars' },
@@ -251,7 +252,7 @@ function nav(base, active) {
 <header class="topbar${active === 'home' ? '' : ' solid'}" id="topbar">
   <a href="${base}index.html" class="brand" aria-label="360 Contracts home">
     <span class="mark"><span>360</span></span>
-    <span class="name">360<b>.</b>Contracts<span class="sub">Building &amp; Landscaping</span></span>
+    <span class="name">360<b>.</b>Contracts<span class="sub">Paving &amp; Surfacing Specialists</span></span>
   </a>
   <nav class="nav-links" aria-label="Primary">
     <div class="nav-item">
@@ -288,7 +289,7 @@ function nav(base, active) {
 }
 
 function marquee() {
-  const items = ['Monoblocking', 'Slabbing & Patios', 'Landscaping', 'Fencing', 'Stonework', 'Driveways', 'Drainage', 'Extensions', 'Digger Work', 'New Builds'];
+  const items = ['Tarmac', 'Paving', 'Building', 'Slabbing & Patios', 'Landscaping', 'Fencing', 'Bricklaying', 'Stonework', 'Drainage', 'Digger Work'];
   const run = items.map(i => `${i}<i></i>`).join('');
   return `
 <div class="strip" aria-hidden="true">
@@ -321,7 +322,7 @@ function footer(base) {
       <div class="foot-brand">
         <a href="${base}index.html" class="brand">
           <span class="mark"><span>360</span></span>
-          <span class="name">360<b>.</b>Contracts<span class="sub">Building &amp; Landscaping</span></span>
+          <span class="name">360<b>.</b>Contracts<span class="sub">Paving &amp; Surfacing Specialists</span></span>
         </a>
         <p>All trades supplied and sorted by one team. Driveways, patios, landscaping and builds across Arbroath, Dundee, Angus &amp; Aberdeen. Done right, no hassle.</p>
       </div>
@@ -425,8 +426,8 @@ function pageHome() {
   }];
   return head({
     path: 'index.html', base,
-    title: '360 Contracts | All Trades. Sorted. | Building & Landscaping, Angus, Tayside & Aberdeen',
-    desc: '360 Contracts. One team for driveways, patios, landscaping, fencing, stonework and extensions across Arbroath, Dundee, Angus & Aberdeen. Every trade supplied and sorted. No hassle.',
+    title: '360 Contracts | All Trades. Sorted. | Paving & Surfacing Specialists, Angus, Tayside & Aberdeen',
+    desc: '360 Contracts. Paving & surfacing specialists — tarmac, paving, building, patios, fencing and more, all handled by one team across Arbroath, Dundee, Angus & Aberdeen. Every trade supplied and sorted. No hassle.',
     jsonld
   }) + nav(base, 'home') + `
 <section class="hero" id="top">
@@ -436,7 +437,7 @@ function pageHome() {
   <div class="wrap">
     <span class="eyebrow reveal">${SITE.areaLine}</span>
     <h1 class="display reveal">All Trades.<br><em>Sorted.</em></h1>
-    <p class="lead reveal">Driveways, patios, landscaping, fencing, stonework and extensions, all handled by one team from start to finish. You get a single point of contact and a finish you'll actually want to show off. No hassle.</p>
+    <p class="lead reveal">Tarmac, paving, building, patios, fencing and every other trade, all handled by one team from start to finish. You get a single point of contact and a finish you'll actually want to show off. No hassle.</p>
     <div class="hero-actions reveal">
       <a href="contact.html" class="btn btn-primary">Get a free quote ${arrow}</a>
       <a href="work.html" class="btn btn-ghost">See our work</a>
@@ -468,11 +469,11 @@ ${marquee()}
       <div class="ring reveal" aria-hidden="true">
         <div class="disc"></div><div class="disc d2"></div><div class="disc d3"></div>
         <div class="spin"></div>
-        <div class="core"><div class="big">360<span>°</span></div><div class="cap">Full-Service Build</div></div>
-        <div class="chip c1"><b>Groundwork</b></div>
-        <div class="chip c2"><b>Landscaping</b></div>
-        <div class="chip c3"><b>Stonework</b></div>
-        <div class="chip c4"><b>Finishing</b></div>
+        <div class="core"><div class="big">360<span>°</span></div><div class="cap">All-Round Service</div></div>
+        <div class="chip c1"><b>Tarmac</b></div>
+        <div class="chip c2"><b>Fencing</b></div>
+        <div class="chip c3"><b>Paving</b></div>
+        <div class="chip c4"><b>Bricklaying</b></div>
       </div>
     </div>
   </div>
@@ -562,7 +563,7 @@ function pageServicesHub() {
   return head({
     path: 'services.html', base,
     title: 'Our Services | Driveways, Patios, Landscaping & Building | 360 Contracts',
-    desc: 'Every trade under one roof — monoblocking, slabbing, landscaping, fencing, stonework, drainage, tarmac, extensions and full builds across Angus, Tayside & Aberdeen.',
+    desc: 'Every trade under one roof — tarmac, paving, building, slabbing, landscaping, fencing, bricklaying, stonework, drainage and extensions across Angus, Tayside & Aberdeen.',
     jsonld
   }) + nav(base, 'services') + `
 <section class="page-hero">
