@@ -426,7 +426,7 @@ function pageHome() {
   }];
   return head({
     path: 'index.html', base,
-    title: '360 Contracts | All Trades. Sorted. | Paving & Surfacing Specialists, Angus, Tayside & Aberdeen',
+    title: '360 Contracts | All-Round Service. Sorted. | Paving & Surfacing Specialists, Angus, Tayside & Aberdeen',
     desc: '360 Contracts. Paving & surfacing specialists — tarmac, paving, building, patios, fencing and more, all handled by one team across Arbroath, Dundee, Angus & Aberdeen. Every trade supplied and sorted. No hassle.',
     jsonld
   }) + nav(base, 'home') + `
@@ -436,7 +436,7 @@ function pageHome() {
   </div>
   <div class="wrap">
     <span class="eyebrow reveal">${SITE.areaLine}</span>
-    <h1 class="display reveal">All Trades.<br><em>Sorted.</em></h1>
+    <h1 class="display reveal">All-Round Service.<br><em>Sorted.</em></h1>
     <p class="lead reveal">Tarmac, paving, building, patios, fencing and every other trade, all handled by one team from start to finish. You get a single point of contact and a finish you'll actually want to show off. No hassle.</p>
     <div class="hero-actions reveal">
       <a href="contact.html" class="btn btn-primary">Get a free quote ${arrow}</a>
