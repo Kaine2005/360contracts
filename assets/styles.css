@@ -331,10 +331,13 @@ section{position:relative}
 .svc:hover .go{gap:14px;opacity:1}
 @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){
-  .svc-grid{grid-template-columns:1fr}
-  .svc{padding:24px 22px}
-  .svc .ic{margin:14px 0 16px;width:38px;height:38px}
-  .svc h3{font-size:1.35rem}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .svc{padding:20px 16px}
+  .svc .no{font-size:11px}
+  .svc .ic{margin:12px 0 12px;width:32px;height:32px}
+  .svc h3{font-size:1.05rem;line-height:1.05}
+  .svc p{font-size:.82rem;margin-top:8px}
+  .svc .go{margin-top:12px;font-size:11px}
 }
 
 /* ---------- compact service list (mobile-friendly alt) ---------- */
